@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-2 w-50">
+<div class="card bg-warning text-dark bg-gradient">
+    <div class="card-header bg-gradient bg-info text-black justify-content-center">Saisie d'un projet de recherche</div>
+    <div class="card-body">
+        <form th:action="@{SaveProjetRecherche}" method="post" th:object="${projetRecherche}">
+            <div class="form-group w-auto">
+                <label class="control-label">Titre</label>
+                <input type="text" th:field="*{titre}" class="form-control"/>
+                <span class="text-danger" th:errors="*{titre}"></span>
+            </div>
+            <div class="form-group w-auto">
+                <label class="control-label">Description</label>
+                <input type="text" th:field="*{description}" class="form-control"/>
+                <span class="text-danger" th:errors="*{description}"></span>
+            </div>
+            <div class="form-group w-auto">
+                <label class="control-label">Budget</label>
+                <input type="text" th:field="*{budget}" class="form-control"/>
+                <span class="text-danger" th:errors="*{budget}"></span>
+            </div>
+            <div class="form-group w-auto">
+            <label class="control-label">Duree</label>
+            <input type="text" th:field="*{duree}" class="form-control"/>
+            <span class="text-danger" th:errors="*{duree}"></span>
+        </div><div class="form-group w-auto">
+            <label class="control-label">Justification</label>
+            <input type="text" th:field="*{justification}" class="form-control"/>
+            <span class="text-danger" th:errors="*{justification}"></span>
+        </div><div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <span></span>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>
